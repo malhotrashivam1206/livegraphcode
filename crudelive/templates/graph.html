@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Data Graph</title>
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+    <div id="graph"></div>
+    <script>
+        var graphJson = JSON.parse('{{ graph_json|safe }}');
+        Plotly.newPlot('graph', graphJson.data, graphJson.layout);
+    </script>
+</body>
+</html>
